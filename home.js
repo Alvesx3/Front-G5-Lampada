@@ -25,12 +25,16 @@ function list(){
         });
     }
 }
-function Create(model){
+function create(model){
     let request = new XMLHttpRequest();
 request.open('POST',endpoint);
 request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 request.send(JSON.stringify(model));
-request.onload = function(){
-    
-    }
+request.onload = function(){console.log(request.status);}
+}
+function cadastrar(){
+    let tipo = document.getElementById("tipo").value;
+    let watts = document.getElementById("watts").value;
+    let model = {"tipo":tipo, "watts":watts};
+    create(model);
 }
