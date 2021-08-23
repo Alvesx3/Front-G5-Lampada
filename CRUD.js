@@ -63,7 +63,7 @@ function carrega_tabela(lista){
                         <td>${e.tipo}</td>
                         <td>${e.watts}</td>
                         <td><a href="editar.html?id=${e.id}">Editar</a></td>
-                        <td><a onclick="del(${e.id})">Deletar</a></td>
+                        <td><a href onclick="del(${e.id})">Deletar</a></td>
                     </tr>`;
         corpo.innerHTML += linha;
     });
@@ -87,6 +87,6 @@ function editar(){
     let id = document.getElementById("id").value;
     let tipo = document.getElementById("tipo").value;
     let watts = document.getElementById("watts").value;
-    let model = {"id":id,"watt":watts, "tipo":tipo};
+    let model = {"id":id,"watts":watts, "tipo":tipo};
     update(model);
 }
